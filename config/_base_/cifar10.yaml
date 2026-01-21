@@ -1,0 +1,10 @@
+Dataset:
+  name: cifar10
+  args:
+    data_dir: ./data/cifar10
+
+Model:
+  name: CNNCifar
+  args:
+    num_classes: 10
+    num_groups: 4

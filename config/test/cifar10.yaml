@@ -1,0 +1,43 @@
+seed: 41
+
+# Federated arguments
+FL:
+  name: FedAvg
+  rounds: 100
+  recover_rounds: 60
+  recover_steps: 2
+  num_clients: 10
+  client_rate: 1.0
+  aggregator: averaged_weights
+  dataset: cifar10
+  sampler: UniformSampler
+  # true or false
+  with_DP: true
+  with_attack: true
+  with_defense: true
+  with_recover: true
+  # if true, choose one
+  dp: Fed_dp
+  attack: DBA
+  defense: FIND
+  recover: DIARY
+
+# local trainer arguments
+Trainer:
+  local_epochs: 2
+  batch_size: 64
+  loss_function: nll_loss
+  optimizer:
+    name: SGD
+    args:
+      lr: 0.1
+      momentum: 0.8
+  device: cuda
+
+Selector:
+  name: RandomSelector
+  args:
+    num_clients: 10
+    client_rate: 1.0
+
+

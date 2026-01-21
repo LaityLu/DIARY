@@ -1,0 +1,11 @@
+Recover:
+  name: DIARY
+  args:
+    local_epochs: 2
+    select_round_ratio: 0.5
+    select_client_ratio: 0.9
+    alpha: 0.2
+    beta: 0.2
+    gamma: 0.2
+    zeta: 0.2
+    recalculate_noise: true
