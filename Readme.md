@@ -31,9 +31,6 @@ You can find some configuration files in folder `config` and run the following c
 ```bash
 python main.py --config config/test/fmnist.yaml
 ```
-```bash
-python main_recover.py --config dba_flame_federaser
-```
 For more detailed parameters setting, you can check the configuration files.
 
 ## Acknowledgements
