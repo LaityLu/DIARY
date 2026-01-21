@@ -23,7 +23,7 @@ pip install -r requirements.txt
 ```
 
 ## 2. Dataset Download and Divided
-When you run the experiment, the dataset will be automatically downloaded and divided according to the configuration file. But it will only be done once for the same configuration file.
+When you run the experiment, the dataset will be automatically downloaded and divided according to the configuration file.
 
 
 ## 3. Run the Experiment
