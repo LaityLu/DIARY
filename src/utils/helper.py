@@ -8,13 +8,6 @@ import torch.nn.functional as F
 
 from src.utils import DatasetSplit
 
-
-def set_random_seed(seed_value):
-    np.random.seed(seed_value)
-    torch.manual_seed(seed_value)
-    torch.cuda.manual_seed(seed_value)
-
-
 def add_pixel_pattern(origin_image, adversarial_index, trigger_args):
     image = copy.deepcopy(origin_image)
     # triggers' params

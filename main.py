@@ -4,7 +4,6 @@ import argparse
 
 from src import model, baseloader, sampler, selector, flalgo
 from src.utils import parse_yaml, setup_logger
-from src.utils.helper import set_random_seed
 
 # get the config file path
 parser = argparse.ArgumentParser()
@@ -17,9 +16,6 @@ log_file_path = os.path.join('./logs', config['Dataset']['name'])
 if not os.path.exists(log_file_path):
     os.makedirs(log_file_path)
 logger = setup_logger(log_file_path + f'/{config["Recover"]["name"]}.log')
-
-# set random seed
-set_random_seed(config['seed'])
 
 # get the dataset
 train_dataset, test_dataset = getattr(baseloader, config['Dataset']['name'])(**config['Dataset']['args'])

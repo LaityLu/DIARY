@@ -1,5 +1,8 @@
+torch==2.8.0+cu129
+torchvision==0.23.0+cu129
 numpy==1.24.3
 pandas==2.0.3
 PyYAML==6.0.2
+opt_einsum==3.4.0
 scikit_learn==1.3.2
-scipy==1.10.1
+scipy==1.17.0

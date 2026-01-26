@@ -12,7 +12,7 @@ from src import defense, recover
 from src.client import Client
 from src.utils import setup_logger
 from src.aggregator import average_weights
-from src.utils.helper import evaluate_model, evaluate_dba, set_random_seed
+from src.utils.helper import evaluate_model, evaluate_dba
 
 logger = setup_logger()
 
@@ -30,8 +30,6 @@ class FedAvg:
             config: dict,
             **kwargs
     ):
-        # set random seed
-        set_random_seed(config['seed'])
 
         self.global_model = global_model
         self.selector = selector
