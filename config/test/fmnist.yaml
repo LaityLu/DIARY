@@ -3,8 +3,8 @@ seed: 41
 # Federated arguments
 FL:
   name: FedAvg
-  rounds: 40
-  recover_rounds: 30
+  rounds: 5
+  recover_rounds: 5
   recover_steps: 2
   num_clients: 10
   client_rate: 1.0

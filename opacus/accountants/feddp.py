@@ -111,7 +111,6 @@ class FedDPAccountant(IAccountant):
 
     def init(self,
              budget: float = None,
-             total_budgets: List[float] = None,
              sample_rate: float = 1.0,
              eta: float = 0.5,
              delta_g: float = 0.1,
@@ -149,7 +148,7 @@ class FedDPAccountant(IAccountant):
 
         # compute the privacy cost of a step
         for (noise_multiplier, sample_rate, num_steps) in self.history:
-            eps, delta = compute_privacy_cost_one_step(
+            eps, delta_ = compute_privacy_cost_one_step(
                 noise_multiplier=noise_multiplier,
                 sample_rate=sample_rate,
                 delta=delta,
@@ -157,7 +156,7 @@ class FedDPAccountant(IAccountant):
             for step in range(num_steps):
                 # save the historical privacy cost
                 self.privacy_costs.append(eps)
-                self.deltas.append(delta)
+                self.deltas.append(delta_)
         self.history = []
 
         if len(self.privacy_costs) == 1:

@@ -85,7 +85,6 @@ class Client:
         self.step = 0
 
     def local_train(self) -> Tuple[torch.nn.Module, float]:
-        # logger.info('Client {} training'.format(self.id))
 
         self.model.to(self.device)
 

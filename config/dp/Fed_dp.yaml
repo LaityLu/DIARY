@@ -4,22 +4,22 @@ Fed_dp:
   delta: 0.001
   delta_g: 0.1
   noise_config:
-      type: constant
+      type: CN
 
-#      type: step
-#      beta: 0.8
+#      type: SN
+#      decay_rate: 0.8
 #      rounds: 60
 
-#      type: inverse
+#      type: IPLN
 #      decay_rate: 0.5
   new_noise_config:
-      type: inverse
+      type: IPLN
       decay_rate: 0.05
   max_grad_norm: 5.0
   max_physical_batch_size: 64
   budgets_setting:
-    min_epsilon: 1.0
-    max_epsilon: 10.0
+    min_epsilon: 7.0
+    max_epsilon: 17.0
     name: ThreeLevels
     args: [[0.3,0.4,0.3], [8.0, 12.0, 16.0]]
 

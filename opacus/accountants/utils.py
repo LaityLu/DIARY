@@ -107,38 +107,26 @@ def compute_privacy_cost_all_step(rounds,
                                   noise_config):
     privacy_costs = []
     deltas = []
-    if noise_config['type'] == 'constant':
+    if noise_config['type'] == 'CN':
         eps, delta = compute_privacy_cost_one_step(initial_sigma, sample_rate, delta)
         privacy_costs.extend([eps] * (int(rounds * steps + recover_rounds * recover_steps)))
         deltas.extend([delta] * (int(rounds * steps + recover_rounds * recover_steps)))
-    elif noise_config['type'] == 'step':
+    elif noise_config['type'] == 'SN':
         eps, delta = compute_privacy_cost_one_step(initial_sigma, sample_rate, delta)
         privacy_costs.extend([eps] * (int(rounds * steps)))
         deltas.extend([delta] * (int(rounds * steps)))
-        sigma = initial_sigma * noise_config['beta']
+        sigma = initial_sigma * noise_config['decay_rate']
         eps, delta = compute_privacy_cost_one_step(sigma, sample_rate, delta)
         privacy_costs.extend([eps] * (int(recover_rounds * recover_steps)))
         deltas.extend([delta] * (int(recover_rounds * recover_steps)))
-    elif noise_config['type'] == 'log':
-        for i in range(int(rounds * steps + recover_rounds * recover_steps)):
-            sigma = initial_sigma / (1 + noise_config['decay_rate'] * np.log(i + 1))
-            eps, delta = compute_privacy_cost_one_step(sigma, sample_rate, delta)
-            privacy_costs.append(eps)
-            deltas.append(delta)
-    elif noise_config['type'] == 'double_log':
-        for i in range(int(rounds * steps + recover_rounds * recover_steps)):
-            sigma = initial_sigma / (1 + noise_config['decay_rate'] * np.log(i + 1) * np.log(np.log(i + 2)))
-            eps, delta = compute_privacy_cost_one_step(sigma, sample_rate, delta)
-            privacy_costs.append(eps)
-            deltas.append(delta)
-    elif noise_config['type'] == 'inverse':
+    elif noise_config['type'] == 'IPLN':
         for i in range(int(rounds * steps + recover_rounds * recover_steps)):
             sigma = initial_sigma / (1 + i) ** noise_config['decay_rate']
-            eps, delta = compute_privacy_cost_one_step(sigma, sample_rate, delta)
+            eps, delta_ = compute_privacy_cost_one_step(sigma, sample_rate, delta)
             privacy_costs.append(eps)
-            deltas.append(delta)
+            deltas.append(delta_)
     else:
-        raise ValueError("The noise type should be chosen from 'constant','step','log','double_log','inverse'.")
+        raise ValueError("The noise type should be chosen from 'CN','SN','IPLN'.")
     return privacy_costs, deltas
 
 

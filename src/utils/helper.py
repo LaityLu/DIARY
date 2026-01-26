@@ -177,15 +177,10 @@ def model_state_dict_to_traj(GM_list):
 
 def get_noise_multiplier(initial_noise_multiplier: float, t: int, noise_config: dict):
     noise_multiplier = 0.0
-    if noise_config['type'] == 'constant':
+    if noise_config['type'] == 'CN':
         noise_multiplier = initial_noise_multiplier
-    elif noise_config['type'] == 'step':
-        noise_multiplier = initial_noise_multiplier * (noise_config['beta'] ** (t // noise_config['rounds']))
-    elif noise_config['type'] == 'log':
-        noise_multiplier = initial_noise_multiplier / (1 + noise_config['decay_rate'] * np.log(t + 1))
-    elif noise_config['type'] == 'double_log':
-        noise_multiplier = initial_noise_multiplier / (1 + noise_config['decay_rate'] * np.log(t + 1) *
-                                                       np.log(np.log(t + 2)))
-    elif noise_config['type'] == 'inverse':
+    elif noise_config['type'] == 'SN':
+        noise_multiplier = initial_noise_multiplier * (noise_config['decay_rate'] ** (t // noise_config['rounds']))
+    elif noise_config['type'] == 'IPLN':
         noise_multiplier = initial_noise_multiplier / (1 + t) ** noise_config['decay_rate']
     return noise_multiplier
