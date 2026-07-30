@@ -1,6 +1,6 @@
-# DIARY [![DOI](https://zenodo.org/badge/1138708311.svg)](https://doi.org/10.5281/zenodo.18321979)
+# DIARY [![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.18321979-blue)](https://doi.org/10.5281/zenodo.18321979)
 
-This repository contains a PyTorch implementation of the paper **DIARY: Differentially Private Recovery with Adaptive Privacy Budgets in Federated Unlearning (WWW 2026).**
+This repository contains a PyTorch implementation of the paper **[DIARY: Differentially Private Recovery with Adaptive Privacy Budgets in Federated Unlearning](https://dl.acm.org/doi/abs/10.1145/3774904.3792423) (WWW 2026).**
 
 **Note: This repository will be updated in the next few days for readability and completeness. Please stay tuned!**
 
@@ -38,6 +38,27 @@ For more detailed parameters setting, you can check the configuration files.
 ## 4. Learn More
 - [Global privacy loss of various composition methods](./tutorials/global_privacy_loss_comparison.ipynb)
 - [Simulation curvefitting](./tutorials/simulation_curvefitting.ipynb)
+
+## 5. Citation
+Please cite our paper if you use anything related in your work:
+```
+@inproceedings{10.1145/3774904.3792423,
+    author = {Wang, Hengzhi and Dai, Lu and Zhang, Xianliang and Chen, Haoran and Hu, Juncheng and Yang, Kun},
+    title = {DIARY: Differentially Private Recovery with Adaptive Privacy Budgets in Federated Unlearning},
+    year = {2026},
+    isbn = {9798400723070},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3774904.3792423},
+    doi = {10.1145/3774904.3792423},
+    booktitle = {Proceedings of the ACM Web Conference 2026},
+    pages = {3042–3053},
+    numpages = {12},
+    keywords = {federated unlearning, differential privacy, model recovery},
+    location = {United Arab Emirates},
+    series = {WWW '26}
+}
+```
 
 ## Acknowledgements
 
