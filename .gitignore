@@ -1,5 +1,18 @@
-.idea/
-.ipynb_checkpoints
+# Python-generated files
 __pycache__/
-data/*
-logs/*
+*.py[oc]
+build/
+dist/
+wheels/
+.vscode/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Other files
+/data
+/logs
+uv.lock
+pyproject.toml
+.python-version

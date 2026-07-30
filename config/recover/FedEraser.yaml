@@ -1,6 +1,0 @@
-Recover:
-  name: FedEraser
-  args:
-    round_interval: 2
-    local_epochs: 2
-

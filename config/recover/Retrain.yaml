@@ -1,5 +1,0 @@
-Recover:
-  name: Retrain
-  args:
-    rounds: 30
-    local_epochs: 2

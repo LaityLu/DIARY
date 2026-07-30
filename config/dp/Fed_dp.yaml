@@ -4,14 +4,14 @@ Fed_dp:
   delta: 0.001
   delta_g: 0.1
   noise_config:
-      type: CN
+#      type: CN
 
 #      type: SN
 #      decay_rate: 0.8
 #      rounds: 60
 
-#      type: IPLN
-#      decay_rate: 0.5
+     type: IPLN
+     decay_rate: 0.5
   new_noise_config:
       type: IPLN
       decay_rate: 0.05

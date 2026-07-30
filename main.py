@@ -1,6 +1,7 @@
 import os
 import argparse
-
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 from src import model, baseloader, sampler, selector, flalgo
 from src.utils import parse_yaml, setup_logger

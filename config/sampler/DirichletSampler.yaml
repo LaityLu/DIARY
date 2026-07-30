@@ -1,5 +1,0 @@
-Sampler:
-  name: DirichletSampler
-  args:
-    alpha: 0.5
-    removed_idxes: []

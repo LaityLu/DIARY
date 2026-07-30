@@ -31,7 +31,7 @@ When you run the experiment, the dataset will be automatically downloaded and di
 ## 3. Run the Experiment
 You can find some configuration files in folder `config` and run the following commands:
 ```bash
-python main.py --config config/test/fmnist.yaml
+python main.py --config config/test/mnist.yaml
 ```
 For more detailed parameters setting, you can check the configuration files.
 

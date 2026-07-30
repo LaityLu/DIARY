@@ -1,4 +1,0 @@
-Sampler:
-  name: ShardSampler
-  args:
-    removed_idxes: []
